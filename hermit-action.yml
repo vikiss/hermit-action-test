@@ -10,7 +10,6 @@ inputs:
       default: 'some default param'
 runs:
     using: 'docker'
-    image: 'docker://hermit/path/to/cli/tool'
+    image: 'docker:vikiss/mystery-utils:latest'
     args:
       - ${{ inputs.hermit-param }}
-      
