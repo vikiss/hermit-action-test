@@ -1,13 +1,16 @@
-{
-    "name": "hermit-action",
-    "description": "Runs Hermit Conformance Check",
-    "iconName": "example-icon",
-    "categories": [
-        "Go"
-    ],
-    "filePatterns": [
-        "package.json$",
-        "^Dockerfile",
-        ".*\\.md$"
-    ]
-}
+name: hermit-action
+description: 'Runs Hermit Conformance Check'
+branding:
+  icon: 'crosshair'
+  color: 'purple'
+inputs:
+    hermit-param:
+      description: 'Hermit param'
+      required: true
+      default: 'some default param'
+runs:
+    using: 'docker'
+    image: 'docker://hermit/path/to/cli/tool'
+    args:
+      - ${{ inputs.hermit-param }}
+      
