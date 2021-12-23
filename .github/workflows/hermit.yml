@@ -1,5 +1,4 @@
 name: CI
-
 on:
   push:
     branches: [ main ]
@@ -8,11 +7,10 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-jobs:
-  hermit-conform:
-    steps:
-      - name: Run Hermit Tool
-      - uses: actions/hermit-action@v1
-        with:
-          hermit-param: 'some hermit parameters for the docker image'
+    jobs:
+      hermit-conform:
+        steps:
+          - name: Run Hermit Tool
+          - uses: actions/hermit-action@v1
+            with:
+              hermit-param: 'some hermit parameters for the docker image'
