@@ -11,10 +11,6 @@ on:
 
 jobs:
   hermit-conform:
-
-    runs-on: ubuntu-latest
-    name: Hermit run
-
     steps:
       - name: Run Hermit Tool
       - uses: actions/hermit-action@v1
