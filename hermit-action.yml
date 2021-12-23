@@ -1,0 +1,13 @@
+{
+    "name": "hermit-action",
+    "description": "Runs Hermit Conformance Check",
+    "iconName": "example-icon",
+    "categories": [
+        "Go"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
