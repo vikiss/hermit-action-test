@@ -8,6 +8,6 @@ jobs:
   hermit-conform:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/hermit-action@v1
+      - uses: actions/hermit-action@main
         with:
           hermit-param: 'some hermit parameters for the docker image'
