@@ -14,5 +14,7 @@ jobs:
         id: hermittool
         uses: ./.github/actions/hermit
         with:
-          hermit-param: 'some hermit parameters for the docker image'
-      - run: echo "Hermit says ${{ steps.hermittool.outputs.result }}"
+          hermit-param: 'some param'
+          hermit-param-too: 'another hermit param'
+      - name: print result
+        run: echo "Hermit says ${{ steps.hermittool.outputs.result }}"

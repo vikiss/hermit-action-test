@@ -13,3 +13,5 @@ runs:
     image: 'vikiss/mystery-utils:latest'
     args:
       - ${{ inputs.hermit-param }}
+      - ${{ inputs.hermit-param-too }}
+      - 'static arg'
