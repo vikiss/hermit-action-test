@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 const args = process.argv.slice(2);
 if (args.length) {
-    process.stdout.write('Dummy util received these arguments:\n');
+    const output = [`Dummy util received ${args.length} argument(s):`];
     args.forEach((item) => {
-        process.stdout.write(`${item}\n`);
+        output.push(item);
     });
-
+    process.stdout.write(`::set-output name=result::${output.join()}`);
 } else {
-    process.stdout.write('Dummy util received no arguments\n');
+    process.stdout.write('::set-output name=result::Dummy util received no arguments');
 }
