@@ -1,0 +1,18 @@
+targets:
+  - "api": "7a3e2c9e-d9ca-426e-98aa-1b8b6c08fb9e"
+    "url": "http://petstore.example.com/api"
+    "definition":
+      "type": "API_KIND_OPENAPI"
+      "file": "examples/petstore.yaml"
+
+labels:
+  env: "dev"
+
+analysis:
+  platformURL: "https://api.swrlio.com"
+  timeLimit: "15m"
+  analyzers:
+    - "Conformance"
+    - "ServiceError"
+    - "BrokenObjectLevelAuthorization"
+    - "UseAfterFree"

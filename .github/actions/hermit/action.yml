@@ -10,7 +10,7 @@ inputs:
       default: 'some default param'
 runs:
     using: 'docker'
-    image: 'vikiss/mystery-utils:latest'
+    image: 'ghcr.io/vikiss/hermit:latest'
     args:
       - ${{ inputs.hermit-param }}
       - ${{ inputs.hermit-param-too }}
