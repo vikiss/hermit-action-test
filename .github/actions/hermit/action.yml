@@ -4,14 +4,19 @@ branding:
   icon: 'crosshair'
   color: 'purple'
 inputs:
-    hermit-param:
-      description: 'Hermit param'
+    target-url:
+      description: 'Target UTL to scan'
       required: true
-      default: 'some default param'
+      default: 'https://hermit-service'
+    show-config:
+      description: 'Print Hermit config'
+      required: false
+      default: ''
 runs:
     using: 'docker'
     image: 'ghcr.io/vikiss/hermit:latest'
     args:
-      - ${{ inputs.hermit-param }}
-      - ${{ inputs.hermit-param-too }}
-      - 'static arg'
+      - 'analyze'
+      - "--api-key=${{ secrets.HERMIT_API_KEY }}"
+      - "--target-url=${{ inputs.target-url }}"
+      - ${{ inputs.show-config }}

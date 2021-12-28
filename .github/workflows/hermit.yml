@@ -18,7 +18,7 @@ jobs:
         id: hermittool
         uses: ./.github/actions/hermit
         with:
-          hermit-param: 'some param'
-          hermit-param-too: 'another hermit param'
+          target-url: 'https://hermit-service'
+          show-config: '--show-config'
       - name: print result
         run: echo "Hermit says ${{ steps.hermittool.outputs.result }}"
