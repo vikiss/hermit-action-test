@@ -16,6 +16,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Pull Docker image
+        run: docker pull "ghcr.io/vikiss/hermit:latest"
       - name: Run Hermit
         id: hermittool
         uses: ./.github/actions/hermit
