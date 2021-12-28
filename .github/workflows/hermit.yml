@@ -10,8 +10,9 @@ jobs:
     steps:
       - name: Checkout action code
         uses: actions/checkout@v1
-      - name: Docker login
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Docker login and pull
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
         run: docker pull "ghcr.io/vikiss/hermit:latest"
       - name: Run Hermit
         id: hermittool
