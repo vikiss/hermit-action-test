@@ -5,18 +5,22 @@ branding:
   color: 'purple'
 inputs:
     target-url:
-      description: 'Target UTL to scan'
+      description: 'Target URL to scan'
       required: true
       default: 'https://hermit-service'
     show-config:
       description: 'Print Hermit config'
       required: false
       default: ''
+    api-key:
+      description: 'Hermit API Key'
+      required: true
+      default: ''
 runs:
     using: 'docker'
     image: 'ghcr.io/vikiss/hermit:latest'
     args:
       - 'analyze'
-      - "--api-key=${{ secrets.HERMIT_API_KEY }}"
+      - "--api-key=${{ inputs.api-key }}"
       - "--target-url=${{ inputs.target-url }}"
       - ${{ inputs.show-config }}

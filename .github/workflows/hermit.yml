@@ -18,6 +18,7 @@ jobs:
         id: hermittool
         uses: ./.github/actions/hermit
         with:
+          api-key: ${{ secrets.HERMIT_API_KEY }}
           target-url: 'https://hermit-service'
           show-config: '--show-config'
       - name: print result
