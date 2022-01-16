@@ -22,6 +22,6 @@ runs:
     args:
       - 'analyze'
       - "--api-key=${{ inputs.api-key }}"
-      - "--label=githubAction"
+      - "--label=env=github"
       - "--target-url=${{ inputs.target-url }}"
       - ${{ inputs.show-config }}
