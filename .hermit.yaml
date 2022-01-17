@@ -1,18 +1,19 @@
 targets:
-  - "api": "7a3e2c9e-d9ca-426e-98aa-1b8b6c08fb9e"
-    "url": "http://petstore.example.com/api"
+  - "api": "eeeeeeee-ffff-cccc-dddd-aaaaabbbbbbb"
+    "url": "http://localhost:3000/"
     "definition":
       "type": "API_KIND_OPENAPI"
-      "file": "examples/petstore.yaml"
+      "file": "swagger.yaml"
 
 labels:
   env: "dev"
 
 analysis:
-  platformURL: "https://api.swrlio.com"
+  platformURL: "http://api-alpha.cieri.ai"
   timeLimit: "15m"
   analyzers:
-    - "Conformance"
-    - "ServiceError"
-    - "BrokenObjectLevelAuthorization"
-    - "UseAfterFree"
+    - "OpenAPIConformance"
+    - "BOLA"
+    - "BUA"
+    - "ExcessiveDataExposure"
+    - "ServerError"

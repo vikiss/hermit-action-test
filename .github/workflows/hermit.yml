@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout action code
         uses: actions/checkout@v1
+      - name: Build SUT
+        run: docker build -t vampi_docker:latest ./VAmPI
+      - name: Run SUT
+        run: docker run -d -p 8900:5000 vampi_docker:latest
       - name: Docker login
         run: echo "${{ secrets.PAT }}" | docker login ghcr.io -u vikiss --password-stdin
       - name: Docker pull
