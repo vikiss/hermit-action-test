@@ -29,18 +29,6 @@ jobs:
         uses: ./.github/actions/hermit
         with:
           api-key: ${{ secrets.HERMIT_API_KEY }}
-          target-url: 'https://hermit-service'
           show-config: '--show-config'
       - name: save result
-        # run: echo "Hermit says ${{join(steps.hermittool.outputs.*, '\n')}}"
-        uses: actions/upload-artifact@v2
-        with:
-          name: HermitReport
-          path: HermitReportFolder
-      - name: retrieve result
-        uses: actions/download-artifact@master
-        with:
-          name: HermitReport
-          path: HermitReportFolder
-      - run: ls HermitReportFolder
-      - run: cat HermitReportFolder/HermitReport
+        run: echo "Hermit says ${{join(steps.hermittool.outputs.*, '\n')}}"
