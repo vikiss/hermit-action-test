@@ -39,8 +39,8 @@ jobs:
           path: HermitReportFolder
       - name: retrieve result
         uses: actions/download-artifact@master
-          with:
-            name: HermitReport
-            path: HermitReportFolder
+        with:
+          name: HermitReport
+          path: HermitReportFolder
       - run: ls HermitReportFolder
       - run: cat HermitReportFolder/HermitReport
