@@ -1,6 +1,6 @@
 targets:
   - "api": "eeeeeeee-ffff-cccc-dddd-aaaaabbbbbbb"
-    "url": "http://localhost:3000/"
+    "url": "http://localhost:8900/"
     "definition":
       "type": "API_KIND_OPENAPI"
       "file": "swagger.yaml"
