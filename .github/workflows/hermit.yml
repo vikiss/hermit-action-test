@@ -19,7 +19,7 @@ jobs:
         with:
           time: 1s
       - name: Verify SUT is up
-        run: curl http://localhost::8900
+        run: curl http://localhost:8900
       - name: Docker login
         run: echo "${{ secrets.PAT }}" | docker login ghcr.io -u vikiss --password-stdin
       - name: Docker pull
