@@ -20,7 +20,6 @@ runs:
     using: 'docker'
     image: 'ghcr.io/vikiss/hermit:latest'
     args:
-      - '--network=host'
       - 'analyze'
       - "--api-key=${{ inputs.api-key }}"
       - "--label=env=github"
