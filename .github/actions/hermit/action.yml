@@ -19,6 +19,7 @@ inputs:
 runs:
     using: 'docker'
     image: 'ghcr.io/vikiss/hermit:latest'
+    options: --network=host
     args:
       - 'analyze'
       - "--api-key=${{ inputs.api-key }}"
