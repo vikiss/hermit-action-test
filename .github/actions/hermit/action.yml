@@ -6,8 +6,8 @@ branding:
 inputs:
     target-url:
       description: 'Target URL to scan'
-      required: true
-      default: 'https://hermit-service'
+      required: false
+      default: ''
     show-config:
       description: 'Print Hermit config'
       required: false
@@ -23,5 +23,5 @@ runs:
       - 'analyze'
       - "--api-key=${{ inputs.api-key }}"
       - "--label=env=github"
-      - "--target-url=${{ inputs.target-url }}"
+      - ${{ inputs.target-url }}
       - ${{ inputs.show-config }}
