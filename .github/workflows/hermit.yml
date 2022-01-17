@@ -32,4 +32,4 @@ jobs:
           target-url: 'https://hermit-service'
           show-config: '--show-config'
       - name: print result
-        run: echo "Hermit says ${{ steps.hermittool.outputs.result }}"
+        run: echo "Hermit says ${{ steps.hermittool.outputs }}"
