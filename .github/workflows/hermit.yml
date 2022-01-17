@@ -14,10 +14,6 @@ jobs:
         run: docker build -t vampi_docker:latest ./VAmPI
       - name: Run SUT
         run: docker run -d -p 8900:5000 vampi_docker:latest
-      - name: Sleep for 1s
-        uses: juliangruber/sleep-action@v1
-        with:
-          time: 1s
       - name: Verify SUT is up
         run: curl http://localhost:8900
       - name: Docker login
@@ -30,5 +26,3 @@ jobs:
         with:
           api-key: ${{ secrets.HERMIT_API_KEY }}
           show-config: '--show-config'
-      - name: save result
-        run: echo "Hermit says ${{join(steps.hermittool.outputs.*, '\n')}}"
