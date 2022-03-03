@@ -1,19 +1,50 @@
-targets:
-  - "api": "eeeeeeee-ffff-cccc-dddd-aaaaabbbbbbb"
-    "url": "http://localhost:8900/"
-    "definition":
-      "type": "API_KIND_OPENAPI"
-      "file": "swagger.yaml"
-
-labels:
-  env: "dev"
-
-analysis:
-  platformURL: "http://api-alpha.cieri.ai"
-  timeLimit: "15m"
-  analyzers:
-    - "OpenAPIConformance"
-    - "BOLA"
-    - "BUA"
-    - "ExcessiveDataExposure"
-    - "ServerError"
+{
+    "targets": [
+      {
+        "api": "f79a0dad-9061-4550-8dea-e819da202c21",
+        "url": "http://54.177.254.19:5000",
+        "definition": {
+          "type": "API_KIND_OPENAPI",
+          "path": "https://dev.cieri.ai/openapi3.yaml"
+        },
+        "authorization": {
+          "static": {
+            "name2": {
+              "location": "header",
+              "name": "Authorization",
+              "value": "bearer AUTH_TOKEN"
+            }
+          }
+        }
+      }
+    ],
+    "environmentid": "fb464797-4e42-44bb-acf5-0efe6240690b",
+    "labels": {
+      "env": "dev"
+    },
+    "analysis": {
+      "platformURL": "https://dev.cieri.ai/api/v1",
+      "skipPublish": false,
+      "timeLimit": "15m",
+      "fuzzLimit": 3,
+      "fuzzCorpus": {
+        "strings": [
+          "admin",
+          "name2"
+        ]
+      },
+      "sequenceLimit": 3,
+      "analyzers": [
+        "OpenAPIConformance",
+        "BOLA",
+        "BUA",
+        "BUAWeakPasswords",
+        "ExcessiveDataExposure",
+        "EmailExposure",
+        "PasswordExposure",
+        "SSNExposure",
+        "CCExposure",
+        "ServerError"
+      ]
+    }
+  }
